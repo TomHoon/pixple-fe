@@ -9,7 +9,6 @@
 <body>
   <div class="background">
     <div class="content">
-      
       <img src="./images//habboman.png" alt="" class="person">
 
       <img src="./images/object1.png" alt="" class="obj object1">
@@ -25,6 +24,12 @@
   const p1 = new Person(person);
 
   document.addEventListener('keydown', (e) => {
-    p1.move(e.key);
+    p1.setKey(e.key);
+  });
+
+  document.addEventListener('keyup', (e) => {
+    p1.clearKey();
   })
+
+  p1.move();
 </script>

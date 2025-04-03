@@ -2,6 +2,7 @@ class Person {
   constructor(domNode) {
     const PARENT = domNode.parentNode
 
+    this.key = null;
     this.target = domNode;
     this.top = this.target.offsetTop;
     this.left = this.target.offsetLeft;
@@ -64,8 +65,19 @@ class Person {
     this.left += left;
   }
 
-  move(key) {
-    switch (key) {
+  clearKey() {
+    this.key = null;
+  }
+
+  setKey(key) {
+    console.log(key);
+    this.key = key;
+  }
+
+  move() {
+    if (!this.key) cancelAnimationFrame(window.raf);
+
+    switch (this.key) {
       case 'ArrowUp' :
         this.setTop(-10);
         this.target.style.top = this.getTop();
@@ -84,7 +96,8 @@ class Person {
         break;
       default:
         break;
-        
     }
+
+    window.raf = requestAnimationFrame(this.move.bind(this));
   }
 }

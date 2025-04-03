@@ -9,16 +9,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  opacity: 0.09;
-  width: 1000px;
-  height: 800px;
+  width: 500px;
+  height: 300px;
   background-color: black;
   /* background-image: url('./images/background.jpg'); */
   /* background-repeat: no-repeat; */
 }
 
 .square1 {
-  width: 800px;
+  width: 500px;
   height: 550px;
   background-color: black;
   transform: skew(15deg, 15deg) rotate(76deg);
